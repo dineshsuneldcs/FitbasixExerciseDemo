@@ -87,62 +87,62 @@ class _ExerciseDetailPageState
                         );
                       }
 
-                      return Stack(
-                        fit: StackFit.expand,
+                      return Column(
                         children: [
-                          CachedNetworkImage(
-                            imageUrl: exercise.gifUrl,
-                            fit: BoxFit.fill,
-                            alignment: Alignment.topLeft,
+                          Expanded(
+                            child: CachedNetworkImage(
+                              imageUrl: exercise.gifUrl,
+                              fit: BoxFit.fill,
+                              alignment: Alignment.topLeft,
+                            ),
                           ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 16),
-                                child: Wrap(
-                                  spacing: 16,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const Icon(Icons.fitness_center,
-                                            size: 22),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text(exercise.equipment.titleCase)
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const Icon(
-                                          Icons.local_fire_department,
-                                          size: 22,
-                                        ),
-                                        const SizedBox(
-                                          width: 12,
-                                        ),
-                                        Text(exercise.target.titleCase)
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        const Icon(
-                                          Icons.accessibility_new,
-                                          size: 22,
-                                        ),
-                                        const SizedBox(
-                                          width: 12,
-                                        ),
-                                        Text(exercise.bodyPart.titleCase)
-                                      ],
-                                    ),
-                                  ],
-                                ),
+                          Card(
+                            margin: const EdgeInsets.only(bottom: 16),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16, vertical: 16),
+                              child: Wrap(
+                                spacing: 16,
+                                runSpacing: 12,
+                                children: [
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(Icons.fitness_center,
+                                          size: 22),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
+                                      Text(exercise.equipment.titleCase)
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(
+                                        Icons.local_fire_department,
+                                        size: 22,
+                                      ),
+                                      const SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(exercise.target.titleCase)
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      const Icon(
+                                        Icons.accessibility_new,
+                                        size: 22,
+                                      ),
+                                      const SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(exercise.bodyPart.titleCase)
+                                    ],
+                                  ),
+                                ],
                               ),
                             ),
                           )
